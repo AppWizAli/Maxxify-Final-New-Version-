@@ -385,7 +385,8 @@ $package3Points = $pdo->query("SELECT * FROM packagepoints WHERE package_id = 3 
                     </div>
                 </div>
 
-                <div class="flex flex-col items-center w-full space-y-6 py-6 flex-grow">
+      <div class="flex flex-col items-center w-full space-y-6 py-6 flex-grow overflow-y-auto px-1">
+
 
                     <button
                         class="w-[320px] h-[52px] rounded-[104px] border-4 border-[#BC97FF] bg-[#673AB7] text-white text-[20px] leading-[22px] font-bold font-[Manrope] hover:bg-[#5e2ea0] transition duration-300">
@@ -400,25 +401,53 @@ $package3Points = $pdo->query("SELECT * FROM packagepoints WHERE package_id = 3 
                             (All In One)</p>
                         <p id="cartPackageDesc" class="font-medium text-[18px] text-[#000000] mt-1">Our most affordable
                             all in one plan to get you started.</p>
-                        <div class="mt-4 grid grid-cols-2 gap-2 text-[18px] text-[#000000] font-medium">
-                            <div>Courses:</div>
-                            <div>Physics, Chemistry, Biology</div>
-                            <div>Duration:</div>
-                            <div>Till 2025 Exams</div>
-                            <div>Price:</div>
-                            <div class="flex items-center justify-between">
-                                <span class="text-[18px] font-semibold" id="cartNewPrice"></span>
-                            </div>
-                        </div>
-                    </div>
+                   <div class="mt-4 space-y-3 text-[18px] text-[#000000] font-medium">
 
-                    <!-- Total Price -->
+  <!-- Courses -->
+  <div class="flex items-start justify-between gap-4">
+    <span class="min-w-[90px] shrink-0">Courses:</span>
+    <span class="text-right break-words flex-1">
+      Physics, Chemistry, Biology
+    </span>
+  </div>
+
+  <!-- Duration -->
+  <div class="flex items-start justify-between gap-4">
+    <span class="min-w-[90px] shrink-0">Duration:</span>
+    <span class="text-right break-words flex-1">
+      Till 2025 Exams
+    </span>
+  </div>
+
+  <!-- Price -->
+  <div class="flex items-center justify-between gap-4">
+    <span class="min-w-[90px] shrink-0">Price:</span>
+    <span class="text-right font-semibold" id="cartNewPrice"></span>
+  </div>
+
+  <!-- Dynamic Feature List -->
+  <div class="pt-2">
+    <ul class="feature-list space-y-2">
+      <?php foreach ($package3Points as $point): ?>
+        <li class="flex items-start gap-2 break-words">
+          <span class="text-[#274d90] text-xl leading-none">•</span>
+          <span><?= htmlspecialchars($point['point']) ?></span>
+        </li>
+      <?php endforeach; ?>
+    </ul>
+  </div>
+
+</div>
+      <!-- Total Price -->
                     <div class="w-full font-[Manrope] px-4">
                         <h2 class="text-[28px] font-bold leading-[30px] text-[#000000]">Total</h2>
                         <div class="flex items-baseline mt-1 space-x-2">
                             <span class="text-[28px] font-bold text-purple-700" id="cartTotalPrice"></span>
                         </div>
                     </div>
+                    </div>
+
+              
                 </div>
 
                 <!-- Bottom Checkout Button -->
