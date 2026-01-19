@@ -1,0 +1,67 @@
+ :root {
+      --theme: #673ab7;
+      --white: #ffffff;
+      --header: #4527a0;
+    }
+
+
+    /* Cursor Styles */
+    .mouse-cursor {
+      position: fixed;
+      left: 0;
+      top: 0;
+      pointer-events: none;
+      border-radius: 50%;
+      transform: translateZ(0);
+      visibility: visible;
+    }
+
+    .cursor-inner {
+      width: 6px;
+      height: 6px;
+      z-index: 10000001;
+      background-color: var(--theme);
+      transition: width 0.3s ease-in-out, height 0.3s ease-in-out, margin 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    }
+
+    .cursor-inner.cursor-hover {
+      margin-left: -35px;
+      margin-top: -35px;
+      width: 70px;
+      height: 70px;
+      opacity: 0.3;
+    }
+
+    .cursor-outer {
+      margin-left: -12px;
+      margin-top: -12px;
+      width: 30px;
+      height: 30px;
+      border: 1px solid var(--theme);
+      box-sizing: border-box;
+      z-index: 10000000;
+      opacity: 0.5;
+      transition: all 0.08s ease-out;
+    }
+
+    .cursor-outer.cursor-hover {
+      opacity: 0;
+    }
+
+    /* Sample Button to Test Hover */
+    .test-button {
+      margin: 150px auto;
+      display: block;
+      padding: 15px 30px;
+      font-size: 18px;
+      background-color: var(--theme);
+      color: white;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .test-button:hover {
+      background-color: var(--header);
+    }

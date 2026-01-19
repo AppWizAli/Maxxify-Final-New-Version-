@@ -1,0 +1,113 @@
+   .fullscreen-loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: linear-gradient(to bottom right, #f5f0fa, #ffffff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .dot-loader {
+      display: flex;
+      gap: 14px;
+    }
+
+    .dot-loader span {
+      width: 16px;
+      height: 16px;
+      background-color: #7e22ce; /* Deep Purple */
+      border-radius: 9999px;
+      animation: wave 1.2s infinite ease-in-out;
+      box-shadow: 0 0 10px rgba(126, 34, 206, 0.4);
+    }
+
+    .dot-loader span:nth-child(1) {
+      animation-delay: 0s;
+    }
+    .dot-loader span:nth-child(2) {
+      animation-delay: 0.15s;
+    }
+    .dot-loader span:nth-child(3) {
+      animation-delay: 0.3s;
+    }
+    .dot-loader span:nth-child(4) {
+      animation-delay: 0.45s;
+    }
+    .dot-loader span:nth-child(5) {
+      animation-delay: 0.6s;
+    }
+
+    @keyframes wave {
+      0%, 100% {
+        transform: translateY(0);
+        opacity: 0.5;
+      }
+      50% {
+        transform: translateY(-15px);
+        opacity: 1;
+      }
+    }
+
+
+
+    /* ....................................................... */
+
+        /* Scroll-to-top button */
+    #scrollToTopBtn {
+      position: fixed;
+      bottom: 2.5rem;
+      right: 2.5rem;
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #7c3aed, #c084fc); /* Purple gradient */
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 15px 25px rgba(0,0,0,0.3);
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(100px) scale(0.5) rotate(0deg);
+      transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+      z-index: 1000;
+    }
+
+    /* Show button */
+    #scrollToTopBtn.show {
+      opacity: 1;
+      transform: translateY(0) scale(1) rotate(0deg);
+      animation: float 2s infinite ease-in-out;
+    }
+
+    /* Hover effect */
+    #scrollToTopBtn:hover {
+      transform: translateY(-5px) scale(1.1) rotate(360deg);
+      box-shadow: 0 20px 30px rgba(0,0,0,0.4);
+    }
+
+    /* Arrow inside button */
+    #scrollToTopBtn svg {
+      width: 28px;
+      height: 28px;
+      transition: transform 0.3s ease;
+    }
+
+    #scrollToTopBtn:hover svg {
+      transform: translateY(-4px);
+    }
+
+    /* Floating animation for attention */
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }   
+
+
+
+
+    

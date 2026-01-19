@@ -1,0 +1,5 @@
+node_modules/
+payment_proof/*
+!payment_proof/.gitkeep
+payment_proofs/*
+!payment_proofs/.gitkeep
